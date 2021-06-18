@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Teamapt\Monnify\Api\Data\ReservedAccountConfigInterface" type="Teamapt\Monnify\Model\ReservedAccountConfig"/>
+    <preference for="Teamapt\Monnify\Api\ItemRepositoryInterface" type="Teamapt\Monnify\Model\ItemRepository"/>
+    <preference for="Teamapt\Monnify\Api\ReservedAccountInterface" type="Teamapt\Monnify\Api\Impl\MonnifyReservedAccountImpl"/>
+    <preference for="Teamapt\Monnify\Api\ReservedAccountConfigInterface" type="Teamapt\Monnify\Api\Impl\ReservedAccountConfigImpl"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="reserved_account_grid_data_source" xsi:type="string">Teamapt\Monnify\Model\ResourceModel\ReservedAccountConfig\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="base_tax_amount" xsi:type="string">sales_order.base_tax_amount</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

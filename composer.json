@@ -1,0 +1,30 @@
+{
+    "name": "teamapt/monnify",
+    "description": "Monnify Reserved Account Extension",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "license": [
+        "MIT"
+    ],
+    "require": {
+        "php": "~7.2.34",
+        "teamapt/monnify": "v1.0.0"
+    },
+    "authors": [{
+        "email": "josiaholatunde17@gmail.com",
+        "name": "Ogunboyejo Olatunde"
+    }],
+    "minimum-stability": "dev",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Teamampt\\Monnify\\": ""
+        }
+    },
+    "repositories": [{
+        "type": "vcs",
+        "url": "https://github.com/josiaholatunde/olam-reserved-acct"
+    }]
+}

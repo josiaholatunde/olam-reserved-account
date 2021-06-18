@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<routes>
+    <route url="/V1/reserved-account" method="POST">
+        <service class="Teamapt\Monnify\Api\ReservedAccountInterface" method="createReservedAccount"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>
