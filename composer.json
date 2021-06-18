@@ -18,9 +18,5 @@
         "psr-4": {
             "Teamampt\\Monnify\\": ""
         }
-    },
-    "repositories": [{
-        "type": "vcs",
-        "url": "https://github.com/josiaholatunde/olam-reserved-acct"
-    }]
+    }
 }
