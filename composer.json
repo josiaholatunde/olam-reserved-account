@@ -1,7 +1,7 @@
 {
     "name": "teamapt/monnify",
     "description": "Monnify Reserved Account Extension",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "magento2-module",
     "license": [
         "MIT"
@@ -10,7 +10,7 @@
         "email": "josiaholatunde17@gmail.com",
         "name": "Ogunboyejo Olatunde"
     }],
-    "minimum-stability": "dev",
+    "minimum-stability": "main",
     "autoload": {
         "files": [
             "registration.php"
