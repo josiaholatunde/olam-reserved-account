@@ -70,10 +70,12 @@ class ApiService extends \Magento\Framework\App\Helper\AbstractHelper {
     }
 
     private function buildErrorResponse($message) {
-        return json_encode([
+        return [
+            [
                 'requestSuccessful' => false,
                 'message' => $message
-            ]);
+            ]
+        ];
     }
 
     private function getFirstAccountDetailsFromResponse($data) {
@@ -98,10 +100,12 @@ class ApiService extends \Magento\Framework\App\Helper\AbstractHelper {
 
     private function buildSucessResponse($data) {
         $responseData = $this->extractRequiredResponseData($data);
-        return  new TestResponse(
-            true,
-            $responseData
-        );
+        return  [
+            [
+                'requestSuccessful' => true,
+                'data' =>  $responseData
+            ]
+        ];           
     }
 
     private function getReservedAccountDetailsIfExists($reservedAccountReference, $accessToken) {
