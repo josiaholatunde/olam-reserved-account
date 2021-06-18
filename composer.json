@@ -6,10 +6,6 @@
     "license": [
         "MIT"
     ],
-    "require": {
-        "php": "~7.2.34",
-        "teamapt/monnify": "v1.0.0"
-    },
     "authors": [{
         "email": "josiaholatunde17@gmail.com",
         "name": "Ogunboyejo Olatunde"
