@@ -1,5 +1,5 @@
 # olam-reserved-account
-Reserved Account Creation Package with Monnify
+## Reserved Account Creation Package with Monnify
 
 Run the command below to add the package as a dependency
 ```
@@ -17,7 +17,7 @@ php bin/magento cache:clean
 - Click on `Add Config` button to add a new configuration
 - After creating a new config, you should click on the `Set Active` action link on the right side of each row to enable the config hyou intend to use for creating the reserved account.
 
-Accessing the API
+## Accessing the API
 The API URL for creating the reserved account : {yourMagentoBaseUrl}/rest/V1/reserved-account . The API returns the reserved account details if the accountReference
 already exists on monnify or creates a new reserved account if it does not exist on Monnify
 Here is a sample valid request: 
