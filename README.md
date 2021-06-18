@@ -46,6 +46,7 @@ Here is a sample valid response
     }
   }
 ]
+```
 
 Here is a sample invalid request:
 ```
