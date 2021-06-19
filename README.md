@@ -72,6 +72,12 @@ Here is a sample invalid request:
 
 Here is a sample invalid response:
 ```
-
+[
+  {
+    "requestSuccessful": false,
+    "message": "One or more validation error(s) occurred. Message: Customer name field is required. "
+  }
+]
+```
 
 
