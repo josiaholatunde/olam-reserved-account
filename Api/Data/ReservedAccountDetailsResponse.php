@@ -28,10 +28,15 @@ interface ReservedAccountDetailsResponse
      * @return string
      */
     public function getBankCode();
-    
+
      /**
      * @return string
      */
     public function getCustomerEmail();
+
+    /**
+     * @return string
+     */
+    public function getCustomerName();
 }
 
