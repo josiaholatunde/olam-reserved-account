@@ -2,24 +2,7 @@
 namespace Teamapt\Monnify\Api\Impl;
 
 use Magento\Framework\HTTP\Client\Curl;
-
-class TestResponse {
-    private $requestSuccessful;
-    private $data;
-
-    public function __construct($requestSuccessful, $data) {
-        $this->requestSuccessful = $requestSuccessful;
-        $this->data = $data;
-    }
-
-    public function getRequestSuccessful() {
-        return $this->requestSuccessful;
-    }
-
-    public function getData() {
-        return $this->data;
-    }
-}
+use Teamapt\Monnify\Api\Data\Impl\ReservedAccountResponseImpl;
 
 class ApiService extends \Magento\Framework\App\Helper\AbstractHelper {
 
@@ -70,12 +53,7 @@ class ApiService extends \Magento\Framework\App\Helper\AbstractHelper {
     }
 
     private function buildErrorResponse($message) {
-        return [
-            [
-                'requestSuccessful' => false,
-                'message' => $message
-            ]
-        ];
+        return new ReservedAccountResponseImpl(false, null, $message);
     }
 
     private function getFirstAccountDetailsFromResponse($data) {
@@ -100,12 +78,7 @@ class ApiService extends \Magento\Framework\App\Helper\AbstractHelper {
 
     private function buildSucessResponse($data) {
         $responseData = $this->extractRequiredResponseData($data);
-        return  [
-            [
-                'requestSuccessful' => true,
-                'data' =>  $responseData
-            ]
-        ];           
+        return  new ReservedAccountResponseImpl(true, $responseData, null);          
     }
 
     private function getReservedAccountDetailsIfExists($reservedAccountReference, $accessToken) {
@@ -127,6 +100,10 @@ class ApiService extends \Magento\Framework\App\Helper\AbstractHelper {
         }
     }
 
+    /**
+     * Create reserved account
+     * @return \ReservedAccountResponseImpl
+     */
     public function createReservedAccount(array $reservedAccountPayload, $activeConfigObject)
     {
         $accessToken = $this->authenticate($activeConfigObject);
